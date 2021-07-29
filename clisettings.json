@@ -1,0 +1,16 @@
+{
+  "domainNamespace": "QuinntyneBrown.Api",
+  "applicationNamespace": "QuinntyneBrown.Api",
+  "infrastructureNamespace": "QuinntyneBrown.Api",
+  "apiNamespace": "QuinntyneBrown.Api",
+  "domainDirectory": "C:\\Projects\\QuinntyneBrown\\src\\QuinntyneBrown.Api",
+  "applicationDirectory": "C:\\Projects\\QuinntyneBrown\\src\\QuinntyneBrown.Api",
+  "infrastructureDirectory": "C:\\Projects\\QuinntyneBrown\\src\\QuinntyneBrown.Api",
+  "apiDirectory": "C:\\Projects\\QuinntyneBrown\\src\\QuinntyneBrown.Api",
+  "path": "C:\\Projects\\QuinntyneBrown",
+  "dbContext": "QuinntyneBrownDbContext",
+  "sourceFolder": "src",
+  "resources": [
+    "Profile"
+  ]
+}
