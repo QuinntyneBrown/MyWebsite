@@ -8,7 +8,12 @@ namespace QuinntyneBrown.Api.Interfaces
     public interface IQuinntyneBrownDbContext
     {
         DbSet<Profile> Profiles { get; }
+        DbSet<Talk> Talks { get; }
+        DbSet<BlogPost> BlogPosts { get; }
+        DbSet<Video> Videos { get; }
+        DbSet<DigitalAsset> DigitalAssets { get; }
+        DbSet<User> Users { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-        
+
     }
 }
