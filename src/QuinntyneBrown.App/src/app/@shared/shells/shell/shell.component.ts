@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ProfileService } from '@api';
-import { shareReplay } from 'rxjs/operators';
 import { ShellContextService } from './shell-context.service';
 
 @Component({
@@ -11,10 +9,4 @@ import { ShellContextService } from './shell-context.service';
     ShellContextService
   ]
 })
-export class ShellComponent  {
-  constructor(
-    private readonly _shellContextService: ShellContextService
-  ) {
-
-  }
-}
+export class ShellComponent  { }

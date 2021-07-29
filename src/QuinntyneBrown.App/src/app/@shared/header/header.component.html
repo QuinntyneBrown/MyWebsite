@@ -1,1 +1,18 @@
-<p>header works!</p>
+<ng-container *ngIf="vm$ | async as vm">
+
+  <ul>
+    <li>
+      <a [routerLink]="['/','landing']">Home</a>
+    </li>
+    <li>
+      <a [href]="vm.profile.githubProfile" target="blank">Github</a>
+    </li>
+    <li>
+      <a [href]="vm.profile.linkedInProfile" target="blank">LinkedIn</a>
+    </li>
+    <li>
+      <a [routerLink]="['/','about']">About Me</a>
+    </li>
+  </ul>
+
+</ng-container>

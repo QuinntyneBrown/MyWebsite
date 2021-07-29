@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { baseUrl } from '@core';
+import { ShellContextService } from '@shared/shells/shell/shell-context.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
-export class LandingComponent implements OnInit {
+export class LandingComponent {
 
-  constructor() { }
+  public readonly vm$ = this._shellContextService.profile$
+  .pipe(
+    map(profile => ({ profile }))
+  );
 
-  ngOnInit(): void {
-  }
-
+  constructor(
+    @Inject(baseUrl) public baseUrl:string,
+    private readonly _shellContextService: ShellContextService
+  ) { }
 }

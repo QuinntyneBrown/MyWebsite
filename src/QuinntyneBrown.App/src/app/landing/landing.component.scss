@@ -1,0 +1,35 @@
+:host {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-top: 60px;
+
+  .profile__fullname {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+
+  .profile__avatar {
+    height: 300px;
+    width: 300px;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 30px;
+  }
+
+  .profile__title {
+    text-transform: uppercase;
+    color: #777;
+    letter-spacing: 2.5px;
+  }
+  .profile__container {
+    text-align: center;
+  }
+}

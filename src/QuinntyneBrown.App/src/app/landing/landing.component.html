@@ -1,1 +1,11 @@
-<p>landing works!</p>
+<ng-container *ngIf="vm$ | async as vm">
+
+<div class="profile__container">
+  <div class="profile__avatar" style="background-image: url('{{ baseUrl }}api/digitalasset/serve/{{ vm.profile.avatarDigitalAssetId }}');">
+  </div>
+  <h1 class="profile__fullname">{{ vm.profile.fullname }}</h1>
+  <p class="profile__title">{{ vm.profile.title }}</p>
+
+</div>
+
+</ng-container>

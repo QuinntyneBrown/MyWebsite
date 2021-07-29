@@ -6,7 +6,10 @@ export class Route {
     return {
       path: '',
       component: ShellComponent,
-      children: routes
+      children: routes,
+      data: {
+        reuse: true
+      }
     };
   }
 };

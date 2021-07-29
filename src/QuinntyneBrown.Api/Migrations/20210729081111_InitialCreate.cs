@@ -11,7 +11,11 @@ namespace QuinntyneBrown.Api.Migrations
                 name: "BlogPosts",
                 columns: table => new
                 {
-                    BlogPostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    BlogPostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Body = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Publised = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -36,7 +40,14 @@ namespace QuinntyneBrown.Api.Migrations
                 name: "Profiles",
                 columns: table => new
                 {
-                    ProfileId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    ProfileId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Fullname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GithubProfile = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LinkedInProfile = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AvatarDigitalAssetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,7 +58,11 @@ namespace QuinntyneBrown.Api.Migrations
                 name: "Talks",
                 columns: table => new
                 {
-                    TalkId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    TalkId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PresentationDigitalAssetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -74,7 +89,12 @@ namespace QuinntyneBrown.Api.Migrations
                 name: "Videos",
                 columns: table => new
                 {
-                    VideoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    VideoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CoverArtDigitalAssetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    YouTubeVideoId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PresentationDigitalAssetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {

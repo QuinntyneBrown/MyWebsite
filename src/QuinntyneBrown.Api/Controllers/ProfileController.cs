@@ -32,6 +32,23 @@ namespace QuinntyneBrown.Api.Controllers
             return response;
         }
 
+        [HttpGet("name/{fullname}", Name = "GetProfileByNameRoute")]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        [ProducesResponseType(typeof(ProblemDetails), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(GetProfileByName.Response), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<GetProfileByName.Response>> GetByName([FromRoute] GetProfileByName.Request request)
+        {
+            var response = await _mediator.Send(request);
+
+            if (response.Profile == null)
+            {
+                return new NotFoundObjectResult(request.Fullname);
+            }
+
+            return response;
+        }
+
         [HttpGet(Name = "GetProfilesRoute")]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         [ProducesResponseType(typeof(ProblemDetails), (int)HttpStatusCode.BadRequest)]

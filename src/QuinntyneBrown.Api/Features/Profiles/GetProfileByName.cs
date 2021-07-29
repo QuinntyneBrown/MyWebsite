@@ -1,28 +1,18 @@
-using FluentValidation;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using QuinntyneBrown.Api.Models;
 using QuinntyneBrown.Api.Core;
 using QuinntyneBrown.Api.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace QuinntyneBrown.Api.Features
 {
-    public class CreateProfile
+    public class GetProfileByName
     {
-        public class Validator : AbstractValidator<Request>
-        {
-            public Validator()
-            {
-                RuleFor(request => request.Profile).NotNull();
-                RuleFor(request => request.Profile).SetValidator(new ProfileValidator());
-            }
-
-        }
-
         public class Request : IRequest<Response>
         {
-            public ProfileDto Profile { get; set; }
+            public string Fullname { get; set; }
         }
 
         public class Response : ResponseBase
@@ -39,15 +29,10 @@ namespace QuinntyneBrown.Api.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var profile = new Profile(request.Profile.Title, request.Profile.Fullname, request.Profile.Description);
-
-                _context.Profiles.Add(profile);
-
-                await _context.SaveChangesAsync(cancellationToken);
-
-                return new Response()
+                return new()
                 {
-                    Profile = profile.ToDto()
+                    Profile = (await _context.Profiles
+                    .SingleOrDefaultAsync(x => x.Fullname == request.Fullname)).ToDto()
                 };
             }
 

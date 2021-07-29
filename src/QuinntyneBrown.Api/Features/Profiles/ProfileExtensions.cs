@@ -1,4 +1,3 @@
-using System;
 using QuinntyneBrown.Api.Models;
 
 namespace QuinntyneBrown.Api.Features
@@ -9,7 +8,13 @@ namespace QuinntyneBrown.Api.Features
         {
             return new()
             {
-                ProfileId = profile.ProfileId
+                ProfileId = profile.ProfileId,
+                Title = profile.Title,
+                Fullname = profile.Fullname,
+                AvatarDigitalAssetId = profile.AvatarDigitalAssetId,
+                Description = profile.Description,
+                LinkedInProfile = profile.LinkedInProfile,
+                GithubProfile = profile.GithubProfile
             };
         }
 

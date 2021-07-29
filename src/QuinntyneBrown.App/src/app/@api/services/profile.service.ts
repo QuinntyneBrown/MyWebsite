@@ -35,6 +35,13 @@ export class ProfileService implements IPagableService<Profile> {
       );
   }
 
+  public getByName(options: { fullname: string }): Observable<Profile> {
+    return this._client.get<{ profile: Profile }>(`${this._baseUrl}api/profile/name/${options.fullname}`)
+      .pipe(
+        map(x => x.profile)
+      );
+  }
+
   public remove(options: { profile: Profile }): Observable<void> {
     return this._client.delete<void>(`${this._baseUrl}api/profile/${options.profile.profileId}`);
   }

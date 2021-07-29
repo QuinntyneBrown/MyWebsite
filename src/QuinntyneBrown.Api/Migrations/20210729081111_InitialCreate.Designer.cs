@@ -10,7 +10,7 @@ using QuinntyneBrown.Api.Data;
 namespace QuinntyneBrown.Api.Migrations
 {
     [DbContext(typeof(QuinntyneBrownDbContext))]
-    [Migration("20210729041149_InitialCreate")]
+    [Migration("20210729081111_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,6 +26,18 @@ namespace QuinntyneBrown.Api.Migrations
                     b.Property<Guid>("BlogPostId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Body")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("Publised")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BlogPostId");
 
@@ -58,6 +70,27 @@ namespace QuinntyneBrown.Api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("AvatarDigitalAssetId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fullname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GithubProfile")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LinkedInProfile")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ProfileId");
 
                     b.ToTable("Profiles");
@@ -68,6 +101,18 @@ namespace QuinntyneBrown.Api.Migrations
                     b.Property<Guid>("TalkId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("PresentationDigitalAssetId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TalkId");
 
@@ -105,6 +150,21 @@ namespace QuinntyneBrown.Api.Migrations
                     b.Property<Guid>("VideoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CoverArtDigitalAssetId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("PresentationDigitalAssetId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("YouTubeVideoId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("VideoId");
 
