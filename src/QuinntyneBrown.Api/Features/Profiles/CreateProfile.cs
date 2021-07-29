@@ -39,7 +39,7 @@ namespace QuinntyneBrown.Api.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var profile = new Profile();
+                var profile = new Profile(request.Profile.Fullname, request.Profile.Description);
 
                 _context.Profiles.Add(profile);
 

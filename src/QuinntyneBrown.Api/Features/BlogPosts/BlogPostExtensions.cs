@@ -1,4 +1,3 @@
-using System;
 using QuinntyneBrown.Api.Models;
 
 namespace QuinntyneBrown.Api.Features
@@ -9,7 +8,9 @@ namespace QuinntyneBrown.Api.Features
         {
             return new()
             {
-                BlogPostId = blogPost.BlogPostId
+                BlogPostId = blogPost.BlogPostId,
+                Title = blogPost.Title,
+                Body = blogPost.Body
             };
         }
 

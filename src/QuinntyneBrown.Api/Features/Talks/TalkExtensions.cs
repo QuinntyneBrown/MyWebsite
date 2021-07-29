@@ -1,4 +1,3 @@
-using System;
 using QuinntyneBrown.Api.Models;
 
 namespace QuinntyneBrown.Api.Features
@@ -9,7 +8,10 @@ namespace QuinntyneBrown.Api.Features
         {
             return new()
             {
-                TalkId = talk.TalkId
+                TalkId = talk.TalkId,
+                Title = talk.Title,
+                Description = talk.Description,
+                Date = talk.Date
             };
         }
 

@@ -39,7 +39,10 @@ namespace QuinntyneBrown.Api.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var talk = new Talk();
+                var talk = new Talk(
+                    request.Talk.Title,
+                    request.Talk.Description,
+                    request.Talk.Date);
 
                 _context.Talks.Add(talk);
 

@@ -39,7 +39,9 @@ namespace QuinntyneBrown.Api.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var video = new Video();
+                var video = new Video(
+                    request.Video.Title,
+                    request.Video.Description);
 
                 _context.Videos.Add(video);
 

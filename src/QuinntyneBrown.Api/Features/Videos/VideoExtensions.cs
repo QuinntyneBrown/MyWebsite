@@ -9,7 +9,12 @@ namespace QuinntyneBrown.Api.Features
         {
             return new()
             {
-                VideoId = video.VideoId
+                VideoId = video.VideoId,
+                Title = video.Title,
+                Description = video.Description,
+                YouTubeVideoId = video.YouTubeVideoId,
+                CoverArtDigitalAssetId = video.CoverArtDigitalAssetId,
+                PresentationDigitalAssetId = video.PresentationDigitalAssetId
             };
         }
 
