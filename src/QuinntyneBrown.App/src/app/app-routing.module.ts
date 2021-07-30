@@ -9,15 +9,18 @@ const routes: Routes = [
 
   Route.withShell([
     { path: 'landing', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule) },
-    { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) }
+    { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
+    { path: 'player/:videoId', loadChildren: () => import('./player/player.module').then(m => m.PlayerModule) }
   ]),
 
-  WorkspaceRoute.withShell([{ path: 'video', loadChildren: () => import('./video/video.module').then(m => m.VideoModule) }]),
+  WorkspaceRoute.withShell([{ path: 'video', loadChildren: () => import('./video/video.module').then(m => m.VideoModule) }])
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    paramsInheritanceStrategy: 'always'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

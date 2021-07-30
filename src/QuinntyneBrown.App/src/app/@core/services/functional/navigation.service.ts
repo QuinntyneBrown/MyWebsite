@@ -11,7 +11,7 @@ export class NavigationService {
 
   lastPath: string = '';
 
-  defaultPath = '/workspace';
+  defaultPath = '/';
 
   setLoginUrl(value: string): void {
     this.loginUrl = value;

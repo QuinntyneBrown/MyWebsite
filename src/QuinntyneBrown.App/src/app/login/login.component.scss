@@ -1,0 +1,28 @@
+:host {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #E5E5E5;
+
+  .login__login-form-container {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  app-language-select {
+    position: absolute;
+    top:30px;
+    right: 30px;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+
+}

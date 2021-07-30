@@ -8,6 +8,11 @@ mat-form-field.g-form-field {
   justify-content: center;
 }
 
+.g-action {
+  display: grid;
+  place-items: end end;
+}
+
 button.g-button {
   min-width: 108px;
 }

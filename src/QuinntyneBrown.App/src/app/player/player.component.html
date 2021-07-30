@@ -1,0 +1,4 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <h1>{{ vm.video.title }}</h1>
+  <youtube-player [videoId]="vm.video.youTubeVideoId"></youtube-player>
+</ng-container>

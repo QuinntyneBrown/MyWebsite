@@ -92,7 +92,7 @@ namespace QuinntyneBrown.Api.Features
 
                 await _context.SaveChangesAsync(cancellationToken);
 
-                return new Response()
+                return new()
                 {
                     DigitalAssetIds = digitalAssets.Select(x => x.DigitalAssetId).ToList()
                 };

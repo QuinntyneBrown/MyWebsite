@@ -1,11 +1,24 @@
 <ng-container *ngIf="vm$ | async as vm">
 
-<div class="profile__container">
-  <div class="profile__avatar" style="background-image: url('{{ baseUrl }}api/digitalasset/serve/{{ vm.profile.avatarDigitalAssetId }}');">
-  </div>
-  <h1 class="profile__fullname">{{ vm.profile.fullname }}</h1>
-  <p class="profile__title">{{ vm.profile.title }}</p>
+  <div class="profile__container">
+    <div class="profile__avatar" style="background-image: url('{{ baseUrl }}api/digitalasset/serve/{{ vm.profile.avatarDigitalAssetId }}');">
+    </div>
+    <h1 class="profile__fullname">{{ vm.profile.fullname }}</h1>
+    <p class="profile__title">{{ vm.profile.title }}</p>
 
-</div>
+  </div>
+
+  <div class="landing__videos-container">
+    <h2>Videos</h2>
+
+    <div class="landing__grid">
+
+      <div *ngFor="let video of vm.videos">
+        <h3 class="video__title" (click)="handleVideoTitleClick(video)">{{ video.title }}</h3>
+      </div>
+    </div>
+  </div>
+
+
 
 </ng-container>

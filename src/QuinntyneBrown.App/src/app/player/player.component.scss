@@ -1,0 +1,27 @@
+:host {
+  display: grid;
+  width: 100%;
+  position: relative;
+  max-width: 1500px;
+  margin: 0px auto;
+  box-sizing: border-box;
+  place-items: center center;
+  padding-top:60px;
+
+  youtube-player {
+    max-width: 640px;
+    max-height: 390px;
+    min-height: 390px;
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+
+    ::ng-deep iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
+
+}

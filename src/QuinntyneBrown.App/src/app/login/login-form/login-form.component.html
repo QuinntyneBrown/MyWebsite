@@ -1,0 +1,33 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <mat-card class="g-mat-card">
+    <mat-card-title>
+      <h2>Quinntyne Brown</h2>
+      <h4>Sign In</h4>
+      <p>to continue to protected workspace</p>
+    </mat-card-title>
+
+    <form novalidate autocomplete='off' spellcheck='false' [formGroup]='vm.form'>
+        <mat-form-field appearance="outline" class="g-form-field">
+          <mat-label>Username</mat-label>
+          <input  matInput placeholder='Username'
+                 formControlName='username' required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="g-form-field">
+          <mat-label>Password</mat-label>
+          <input matInput
+                 placeholder='Password'
+                 formControlName='password'
+                 type="password"
+                 required>
+        </mat-form-field>
+      </form>
+
+      <div class="g-action">
+        <button mat-raised-button color='primary' (click)='tryToLogin.emit(vm.form.value)' [disabled]='!vm.form.valid'>Login</button>
+      </div>
+
+    </mat-card>
+</ng-container>
+
+

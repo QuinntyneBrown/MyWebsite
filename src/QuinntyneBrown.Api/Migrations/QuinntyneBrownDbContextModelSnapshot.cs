@@ -158,6 +158,9 @@ namespace QuinntyneBrown.Api.Migrations
                     b.Property<Guid>("PresentationDigitalAssetId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("Published")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 

@@ -10,7 +10,7 @@ using QuinntyneBrown.Api.Data;
 namespace QuinntyneBrown.Api.Migrations
 {
     [DbContext(typeof(QuinntyneBrownDbContext))]
-    [Migration("20210729081111_InitialCreate")]
+    [Migration("20210729183352_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -159,6 +159,9 @@ namespace QuinntyneBrown.Api.Migrations
 
                     b.Property<Guid>("PresentationDigitalAssetId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Published")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");

@@ -29,7 +29,24 @@
     color: #777;
     letter-spacing: 2.5px;
   }
+
   .profile__container {
     text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .landing__videos-container {
+    display: block;
+    width: 100%;
+  }
+
+  .landing__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:40px;
+  }
+
+  .video__title {
+    cursor: pointer;
   }
 }

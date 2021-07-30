@@ -1,4 +1,5 @@
 import { Route as NgRoute, Routes } from '@angular/router';
+import { AuthGuard } from '@core';
 import { WorkspaceShellComponent } from './workspace-shell.component';
 
 export class Route {
@@ -6,7 +7,10 @@ export class Route {
     return {
       path: '',
       component: WorkspaceShellComponent,
-      children: routes
+      children: routes,
+      canActivate: [
+        AuthGuard
+      ]
     };
   }
 };

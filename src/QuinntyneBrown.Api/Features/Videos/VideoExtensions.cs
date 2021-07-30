@@ -14,7 +14,8 @@ namespace QuinntyneBrown.Api.Features
                 Description = video.Description,
                 YouTubeVideoId = video.YouTubeVideoId,
                 CoverArtDigitalAssetId = video.CoverArtDigitalAssetId,
-                PresentationDigitalAssetId = video.PresentationDigitalAssetId
+                PresentationDigitalAssetId = video.PresentationDigitalAssetId,
+                Published = video.Published
             };
         }
 

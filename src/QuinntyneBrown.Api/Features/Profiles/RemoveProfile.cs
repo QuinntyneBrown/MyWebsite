@@ -37,7 +37,7 @@ namespace QuinntyneBrown.Api.Features
 
                 await _context.SaveChangesAsync(cancellationToken);
 
-                return new Response()
+                return new()
                 {
                     Profile = profile.ToDto()
                 };

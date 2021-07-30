@@ -94,7 +94,8 @@ namespace QuinntyneBrown.Api.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CoverArtDigitalAssetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     YouTubeVideoId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PresentationDigitalAssetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    PresentationDigitalAssetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Published = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

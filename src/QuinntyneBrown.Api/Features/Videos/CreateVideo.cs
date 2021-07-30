@@ -17,7 +17,6 @@ namespace QuinntyneBrown.Api.Features
                 RuleFor(request => request.Video).NotNull();
                 RuleFor(request => request.Video).SetValidator(new VideoValidator());
             }
-
         }
 
         public class Request : IRequest<Response>
@@ -40,6 +39,7 @@ namespace QuinntyneBrown.Api.Features
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
                 var video = new Video(
+                    request.Video.YouTubeVideoId,
                     request.Video.Title,
                     request.Video.Description);
 
@@ -47,7 +47,7 @@ namespace QuinntyneBrown.Api.Features
 
                 await _context.SaveChangesAsync(cancellationToken);
 
-                return new Response()
+                return new()
                 {
                     Video = video.ToDto()
                 };

@@ -10,5 +10,6 @@ namespace QuinntyneBrown.Api.Features
         public Guid CoverArtDigitalAssetId { get; set; }
         public string YouTubeVideoId { get; set; }
         public Guid PresentationDigitalAssetId { get; set; }
+        public DateTime Published { get; set; }
     }
 }

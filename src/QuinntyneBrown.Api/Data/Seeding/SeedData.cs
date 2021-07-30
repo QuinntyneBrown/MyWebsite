@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.StaticFiles;
 using QuinntyneBrown.Api.Core;
 using QuinntyneBrown.Api.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace QuinntyneBrown.Api.Data
@@ -13,6 +14,28 @@ namespace QuinntyneBrown.Api.Data
             DigitalAssetConfiguration.Seed(context);
             UserConfiguration.Seed(context);
             ProfileConfiguration.Seed(context);
+            VideoConfiguration.Seed(context);
+        }
+
+        internal static class VideoConfiguration
+        {
+            internal static void Seed(QuinntyneBrownDbContext context)
+            {
+                foreach (var video in new List<Video>
+                {
+                    new Video("Bb4zwjzeA2M","DDD and Event Sourcing using ASP.NET Core, MediatR, SignalR and Angular","")
+                })
+                {
+                    if (context.Videos.SingleOrDefault(x => x.YouTubeVideoId == video.YouTubeVideoId) == null)
+                    {
+                        video.Publish(new DateTime(2018, 9, 24));
+
+                        context.Add(video);
+                    }
+                }
+
+                context.SaveChanges();
+            }
         }
 
         internal static class DigitalAssetConfiguration
@@ -51,7 +74,7 @@ namespace QuinntyneBrown.Api.Data
 
                 if (profile == null)
                 {
-                    profile = new("Fullstack Engineer as RBC Ventures", "Quinntyne Brown","Description and stuff");
+                    profile = new("Fullstack Engineer at RBC Ventures", "Quinntyne Brown", "Description and stuff");
 
                     profile.SetAvatarDigitalAssetId(digitalAsset.DigitalAssetId);
                     profile.SetLinkedInProfile("https://www.linkedin.com/in/quinntynebrown/");
