@@ -1,12 +1,11 @@
 using MediatR;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Linq;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using QuinntyneBrown.Api.Core;
 using QuinntyneBrown.Api.Interfaces;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace QuinntyneBrown.Api.Features
 {
