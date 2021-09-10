@@ -1,3 +1,5 @@
+@use '/src/scss/breakpoints';
+
 :host {
   display: grid;
   place-items: center;
@@ -42,11 +44,21 @@
 
   .landing__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap:40px;
   }
 
   .video__title {
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: breakpoints.$screen-lg) {
+  :host {
+    .landing__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:40px;
+    }
   }
 }
