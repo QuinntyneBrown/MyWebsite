@@ -49,7 +49,7 @@ namespace QuinntyneBrown.Api
 
             services.AddCors(options => options.AddPolicy("CorsPolicy",
                 builder => builder
-                .WithOrigins("http://localhost:4200")
+                .WithOrigins("http://localhost:4200,http://www.quinntynebrown.com")
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(isOriginAllowed: _ => true)
@@ -65,7 +65,7 @@ namespace QuinntyneBrown.Api
 
             services.AddDbContext<QuinntyneBrownDbContext>(options =>
             {
-                options.UseSqlServer(configuration["Data:DefaultConnection:ConnectionString"],
+                options.UseSqlServer(configuration["ConnectionStrings:DefaultConnection"],
                     builder => builder.MigrationsAssembly("QuinntyneBrown.Api").EnableRetryOnFailure())
                 .LogTo(Console.WriteLine)
                 .EnableSensitiveDataLogging();

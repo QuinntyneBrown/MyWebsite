@@ -21,7 +21,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    { provide: baseUrl, useValue: "https://localhost:5001/" },
+    { provide: baseUrl, useValue: "http://quinntynebrown.azurewebsites.net/" },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HeadersInterceptor,
