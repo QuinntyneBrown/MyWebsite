@@ -49,7 +49,7 @@ namespace QuinntyneBrown.Api
 
             services.AddCors(options => options.AddPolicy("CorsPolicy",
                 builder => builder
-                .WithOrigins("http://localhost:4200,http://www.quinntynebrown.com")
+                .WithOrigins("https://jolly-bay-085ad270f.azurestaticapps.net")
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(isOriginAllowed: _ => true)
