@@ -7,9 +7,5 @@ import { baseUrl } from '@core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(
-    @Inject(baseUrl) public b: string
-  ) {
-    alert(b);
-  }
+
 }
