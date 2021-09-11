@@ -1,11 +1,13 @@
+using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using QuinntyneBrown.Api.Features;
 using System.Net;
 using System.Threading.Tasks;
-using QuinntyneBrown.Api.Features;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
 
 namespace QuinntyneBrown.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class VideoController
@@ -15,6 +17,7 @@ namespace QuinntyneBrown.Api.Controllers
         public VideoController(IMediator mediator)
             => _mediator = mediator;
 
+        [AllowAnonymous]
         [HttpGet("{videoId}", Name = "GetVideoByIdRoute")]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
@@ -32,6 +35,7 @@ namespace QuinntyneBrown.Api.Controllers
             return response;
         }
 
+        [AllowAnonymous]
         [HttpGet(Name = "GetVideosRoute")]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         [ProducesResponseType(typeof(ProblemDetails), (int)HttpStatusCode.BadRequest)]

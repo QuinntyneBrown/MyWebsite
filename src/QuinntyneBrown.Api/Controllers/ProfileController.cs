@@ -3,9 +3,11 @@ using System.Threading.Tasks;
 using QuinntyneBrown.Api.Features;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace QuinntyneBrown.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ProfileController
@@ -32,6 +34,7 @@ namespace QuinntyneBrown.Api.Controllers
             return response;
         }
 
+        [AllowAnonymous]
         [HttpGet("name/{fullname}", Name = "GetProfileByNameRoute")]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]

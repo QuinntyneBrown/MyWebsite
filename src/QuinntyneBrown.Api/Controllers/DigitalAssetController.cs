@@ -1,13 +1,13 @@
-using System.Net;
-using System.Threading.Tasks;
-using QuinntyneBrown.Api.Features;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using QuinntyneBrown.Api.Features;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace QuinntyneBrown.Api.Controllers
 {
-
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class DigitalAssetController
