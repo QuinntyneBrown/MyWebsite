@@ -20,6 +20,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuinntyneBrown.IntegrationT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuinntyneBrown.Testing", "test\QuinntyneBrown.Testing\QuinntyneBrown.Testing.csproj", "{87C82ECB-A07D-4EDF-805F-B8079A9CD985}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuinntyneBrown.Core", "src\QuinntyneBrown.Core\QuinntyneBrown.Core.csproj", "{01840B21-F944-4ABE-96B6-E11943F01D2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,18 @@ Global
 		{87C82ECB-A07D-4EDF-805F-B8079A9CD985}.Release|x64.Build.0 = Release|Any CPU
 		{87C82ECB-A07D-4EDF-805F-B8079A9CD985}.Release|x86.ActiveCfg = Release|Any CPU
 		{87C82ECB-A07D-4EDF-805F-B8079A9CD985}.Release|x86.Build.0 = Release|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Debug|x64.Build.0 = Debug|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Debug|x86.Build.0 = Debug|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Release|x64.ActiveCfg = Release|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Release|x64.Build.0 = Release|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Release|x86.ActiveCfg = Release|Any CPU
+		{01840B21-F944-4ABE-96B6-E11943F01D2B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +101,7 @@ Global
 		{D7C11B7C-9132-4F50-9C41-E5EB3CBA0734} = {2A82EFA0-213D-4450-A051-2509BC85F150}
 		{E7687B19-B7AD-4B4F-9283-7491D8465F39} = {2A82EFA0-213D-4450-A051-2509BC85F150}
 		{87C82ECB-A07D-4EDF-805F-B8079A9CD985} = {2A82EFA0-213D-4450-A051-2509BC85F150}
+		{01840B21-F944-4ABE-96B6-E11943F01D2B} = {7D6C1558-1278-4359-ACF9-706FF16EBDA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {875C5D53-21A3-4C2B-80B8-39EAF843E2FE}

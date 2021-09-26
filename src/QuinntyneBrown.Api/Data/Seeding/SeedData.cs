@@ -13,6 +13,7 @@ namespace QuinntyneBrown.Api.Data
         {
             DigitalAssetConfiguration.Seed(context);
             UserConfiguration.Seed(context);
+            AccountConfiguration.Seed(context);
             ProfileConfiguration.Seed(context);
             VideoConfiguration.Seed(context);
         }
@@ -64,29 +65,6 @@ namespace QuinntyneBrown.Api.Data
             }
         }
 
-        internal static class ProfileConfiguration
-        {
-            internal static void Seed(QuinntyneBrownDbContext context)
-            {
-                Profile profile = context.Profiles.SingleOrDefault(x => x.Fullname == "Quinntyne Brown");
-
-                var digitalAsset = context.DigitalAssets.SingleOrDefault(x => x.Name == "QuinntyneBrown.jpg");
-
-                if (profile == null)
-                {
-                    profile = new("Fullstack Engineer at RBC Ventures", "Quinntyne Brown", "Description and stuff");
-
-                    profile.SetAvatarDigitalAssetId(digitalAsset.DigitalAssetId);
-                    profile.SetLinkedInProfile("https://www.linkedin.com/in/quinntynebrown/");
-                    profile.SetGithubProfile("https://github.com/QuinntyneBrown");
-
-                    context.Profiles.Add(profile);
-
-                    context.SaveChanges();
-                }
-            }
-        }
-
         internal static class UserConfiguration
         {
             internal static void Seed(QuinntyneBrownDbContext context)
@@ -98,6 +76,50 @@ namespace QuinntyneBrown.Api.Data
                     user = new("Quinntyne Brown", "quinntynebrown@gmail.com", "P@ssw0rd", new PasswordHasher());
 
                     context.Users.Add(user);
+
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        internal static class AccountConfiguration
+        {
+            internal static void Seed(QuinntyneBrownDbContext context)
+            {
+                var user = context.Users.Single(x => x.Fullname == "Quinntyne Brown");
+
+                var entity = context.Accounts.SingleOrDefault(x => x.AccountHolderFullname == "quinntynebrown@gmail.com");
+
+                if (entity == null)
+                {
+                    entity = new(user.UserId, "Quinntyne Brown");
+
+                    context.Accounts.Add(entity);
+
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        internal static class ProfileConfiguration
+        {
+            internal static void Seed(QuinntyneBrownDbContext context)
+            {
+                Account account = context.Accounts.Single(x => x.AccountHolderFullname == "Quinntyne Brown");
+
+                Profile profile = context.Profiles.SingleOrDefault(x => x.Fullname == "Quinntyne Brown");
+
+                var digitalAsset = context.DigitalAssets.SingleOrDefault(x => x.Name == "QuinntyneBrown.jpg");
+
+                if (profile == null)
+                {
+                    profile = new(account.AccountId, "Fullstack Engineer at RBC Ventures", "Quinntyne Brown", "Description and stuff");
+
+                    profile.SetAvatarDigitalAssetId(digitalAsset.DigitalAssetId);
+                    profile.SetLinkedInProfile("https://www.linkedin.com/in/quinntynebrown/");
+                    profile.SetGithubProfile("https://github.com/QuinntyneBrown");
+
+                    context.Profiles.Add(profile);
 
                     context.SaveChanges();
                 }

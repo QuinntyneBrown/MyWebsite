@@ -39,7 +39,8 @@ namespace QuinntyneBrown.Api
 
                 if (args.Contains("migratedb"))
                 {
-                    context.Database.Migrate();
+                    //context.Database.Migrate();
+                    context.Database.EnsureCreated();
                 }
 
                 if (args.Contains("seeddb"))

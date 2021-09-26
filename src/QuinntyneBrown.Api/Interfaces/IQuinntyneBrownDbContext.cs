@@ -13,7 +13,8 @@ namespace QuinntyneBrown.Api.Interfaces
         DbSet<Video> Videos { get; }
         DbSet<DigitalAsset> DigitalAssets { get; }
         DbSet<User> Users { get; }
+        DbSet<Account> Accounts { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-
+        
     }
 }

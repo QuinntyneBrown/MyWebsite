@@ -5,6 +5,7 @@ namespace QuinntyneBrown.Api.Features
     public class ProfileDto
     {
         public Guid ProfileId { get; set; }
+        public Guid AccountId { get; set; }
         public string Title { get; set; }
         public string Fullname { get; set; }
         public string Description { get; set; }

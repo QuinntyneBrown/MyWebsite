@@ -5,6 +5,7 @@ namespace QuinntyneBrown.Api.Models
     public class Profile
     {
         public Guid ProfileId { get; private set; }
+        public Guid AccountId { get; private set; }
         public string Fullname { get; private set; }
         public string Title { get; private set; }
         public string Description { get; private set; }
@@ -13,8 +14,9 @@ namespace QuinntyneBrown.Api.Models
         public string LinkedInProfile { get; private set; }
         public Guid AvatarDigitalAssetId { get; private set; }
 
-        public Profile(string title, string fullname, string description)
+        public Profile(Guid accountId, string title, string fullname, string description)
         {
+            AccountId = accountId;
             Title = title;
             Fullname = fullname;
             Description = description;

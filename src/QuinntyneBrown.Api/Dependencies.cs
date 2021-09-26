@@ -67,13 +67,12 @@ namespace QuinntyneBrown.Api
 
             services.AddTransient<IQuinntyneBrownDbContext, QuinntyneBrownDbContext>();
 
-            services.AddDbContext<QuinntyneBrownDbContext>(options =>
-            {
-                options.UseSqlServer(configuration["ConnectionStrings:DefaultConnection"],
-                    builder => builder.MigrationsAssembly("QuinntyneBrown.Api").EnableRetryOnFailure())
-                .LogTo(Console.WriteLine)
-                .EnableSensitiveDataLogging();
-            });
+            services.AddDbContext<QuinntyneBrownDbContext>(
+                        o => o.UseCosmos(
+                            configuration["CosmosDb:EndpointUrl"],
+                            configuration["CosmosDb:PrivateKey"],
+                            databaseName: configuration["CosmosDb:DbName"])
+                        );
 
             services.AddControllers();
         }

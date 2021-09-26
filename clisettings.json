@@ -1,11 +1,8 @@
 {
-  "Projects": "",
-  "SolutionName": "QuinntyneBrown.sln",
-  "RootNamespace": "QuinntyneBrown",
   "projects": null,
   "path": "C:\\Projects\\QuinntyneBrown",
-  "solutionName": null,
-  "rootNamespace": null,
+  "solutionName": "QuinntyneBrown.sln",
+  "rootNamespace": "QuinntyneBrown",
   "domainNamespace": "QuinntyneBrown.Api",
   "applicationNamespace": "QuinntyneBrown.Api",
   "infrastructureNamespace": "QuinntyneBrown.Api",
@@ -35,6 +32,7 @@
     "BlogPost",
     "Video",
     "DigitalAsset",
-    "User"
+    "User",
+    "Account"
   ]
 }
