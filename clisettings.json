@@ -33,6 +33,7 @@
     "Video",
     "DigitalAsset",
     "User",
-    "Account"
+    "Account",
+    "StoredEvent"
   ]
 }

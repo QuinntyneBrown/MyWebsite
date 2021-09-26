@@ -1,6 +1,5 @@
 using QuinntyneBrown.Api.Core;
 using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
 
 namespace QuinntyneBrown.Api.Models

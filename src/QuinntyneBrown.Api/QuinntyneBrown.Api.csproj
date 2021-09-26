@@ -31,10 +31,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\QuinntyneBrown.Core\QuinntyneBrown.Core.csproj" />
+    <ProjectReference Include="..\QuinntyneBrown.Infrastructure\QuinntyneBrown.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Data\EntityConfigurations\" />
+    <Folder Include="DomainEvents\" />
   </ItemGroup>
 
 </Project>

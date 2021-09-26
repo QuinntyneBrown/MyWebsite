@@ -14,6 +14,7 @@ namespace QuinntyneBrown.Api.Interfaces
         DbSet<DigitalAsset> DigitalAssets { get; }
         DbSet<User> Users { get; }
         DbSet<Account> Accounts { get; }
+        DbSet<StoredEvent> StoredEvents { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
         
     }

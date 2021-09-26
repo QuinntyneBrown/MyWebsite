@@ -1,8 +1,9 @@
+using QuinntyneBrown.Api.Core;
 using System;
 
 namespace QuinntyneBrown.Api.Models
 {
-    public class BlogPost
+    public class BlogPost: AggregateRoot
     {
         public Guid BlogPostId { get; private set; }
         public string Title { get; private set; }
@@ -16,6 +17,16 @@ namespace QuinntyneBrown.Api.Models
         }
 
         private BlogPost()
+        {
+
+        }
+
+        protected override void When(dynamic @event)
+        {
+
+        }
+
+        protected override void EnsureValidState()
         {
 
         }

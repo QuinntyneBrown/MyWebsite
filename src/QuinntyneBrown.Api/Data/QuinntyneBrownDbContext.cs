@@ -13,7 +13,8 @@ namespace QuinntyneBrown.Api.Data
         public DbSet<DigitalAsset> DigitalAssets { get; private set; }
         public DbSet<User> Users { get; private set; }
         public DbSet<Account> Accounts { get; private set; }
-        public QuinntyneBrownDbContext(DbContextOptions<QuinntyneBrownDbContext> options)
+        public DbSet<StoredEvent> StoredEvents { get; private set; }
+        public QuinntyneBrownDbContext(DbContextOptions options)
             :base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

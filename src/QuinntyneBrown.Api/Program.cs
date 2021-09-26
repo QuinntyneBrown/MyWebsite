@@ -30,16 +30,15 @@ namespace QuinntyneBrown.Api
                 var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
 
                 if (args.Contains("ci"))
-                    args = new string[4] { "dropdb", "migratedb", "seeddb", "stop" };
+                    args = new string[4] { "dropdb", "createdb", "seeddb", "stop" };
 
                 if (args.Contains("dropdb"))
                 {
                     context.Database.EnsureDeleted();
                 }
 
-                if (args.Contains("migratedb"))
+                if (args.Contains("createdb"))
                 {
-                    //context.Database.Migrate();
                     context.Database.EnsureCreated();
                 }
 

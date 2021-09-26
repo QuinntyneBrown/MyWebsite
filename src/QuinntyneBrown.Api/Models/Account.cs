@@ -1,9 +1,10 @@
+using QuinntyneBrown.Api.Core;
 using System;
 using System.Collections.Generic;
 
 namespace QuinntyneBrown.Api.Models
 {
-    public class Account
+    public class Account: AggregateRoot
     {
         public Guid AccountId { get; private set; }
         public Guid UserId { get; private set; }
@@ -18,6 +19,16 @@ namespace QuinntyneBrown.Api.Models
         private Account()
         {
 
+        }
+
+        protected override void When(dynamic @event)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void EnsureValidState()
+        {
+            throw new NotImplementedException();
         }
     }
 }

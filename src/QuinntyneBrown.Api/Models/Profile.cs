@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace QuinntyneBrown.Api.Models
