@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.StaticFiles;
 using QuinntyneBrown.Api.Core;
+using QuinntyneBrown.Api.DomainEvents;
 using QuinntyneBrown.Api.Models;
 using System;
 using System.Collections.Generic;
@@ -92,7 +93,13 @@ namespace QuinntyneBrown.Api.Data
 
                 if (entity == null)
                 {
-                    entity = new(user.UserId, "Quinntyne Brown");
+                    entity = new(new CreateAccount { 
+                        UserId = user.UserId,
+                        AccountId = Guid.NewGuid(),
+                        AccountHolderFullname = "Quinntyne Brown",
+                        Firstname = "Quinntyne",
+                        Lastname = "Brown"
+                    });
 
                     context.Accounts.Add(entity);
 

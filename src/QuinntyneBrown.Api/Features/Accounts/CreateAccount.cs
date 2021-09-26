@@ -39,7 +39,9 @@ namespace QuinntyneBrown.Api.Features
         
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var account = new Account(default, default);
+                var account = new Account(new DomainEvents.CreateAccount { 
+                
+                });
                 
                 _context.Accounts.Add(account);
                 

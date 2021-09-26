@@ -8,7 +8,9 @@ namespace QuinntyneBrown.Api.Data.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Account> builder)
         {
-            builder.HasMany(x => x.Profiles);
+            builder
+                .ToContainer(nameof(Account))
+                .HasMany(x => x.Profiles);            
         }
     }
 }

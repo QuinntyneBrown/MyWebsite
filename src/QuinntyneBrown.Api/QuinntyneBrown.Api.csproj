@@ -36,7 +36,6 @@
 
   <ItemGroup>
     <Folder Include="Data\EntityConfigurations\" />
-    <Folder Include="DomainEvents\" />
   </ItemGroup>
 
 </Project>
