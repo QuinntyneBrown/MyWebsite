@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using QuinntyneBrown.Api.Core;
-using QuinntyneBrown.Api.Interfaces;
+using QuinntyneBrown.Core;
+using QuinntyneBrown.Core.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;

@@ -1,6 +1,6 @@
 using System.Net;
 using System.Threading.Tasks;
-using QuinntyneBrown.Api.Core;
+using QuinntyneBrown.Core;
 using QuinntyneBrown.Api.Features;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

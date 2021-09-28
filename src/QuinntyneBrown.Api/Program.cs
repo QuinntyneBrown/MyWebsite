@@ -1,4 +1,4 @@
-using QuinntyneBrown.Api.Data;
+using QuinntyneBrown.Infrastructure.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

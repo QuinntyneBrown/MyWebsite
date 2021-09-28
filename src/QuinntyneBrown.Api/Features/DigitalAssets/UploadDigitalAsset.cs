@@ -1,6 +1,6 @@
 using QuinntyneBrown.Api.Helpers;
-using QuinntyneBrown.Api.Interfaces;
-using QuinntyneBrown.Api.Models;
+using QuinntyneBrown.Core.Interfaces;
+using QuinntyneBrown.Core.Models;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;

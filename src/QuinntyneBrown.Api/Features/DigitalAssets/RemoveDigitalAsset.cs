@@ -1,6 +1,6 @@
-﻿using QuinntyneBrown.Api.Core;
-using QuinntyneBrown.Api.Interfaces;
-using QuinntyneBrown.Api.Models;
+﻿using QuinntyneBrown.Core;
+using QuinntyneBrown.Core.Interfaces;
+using QuinntyneBrown.Core.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;

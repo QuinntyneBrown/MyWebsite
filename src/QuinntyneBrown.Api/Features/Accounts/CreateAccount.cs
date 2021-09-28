@@ -1,10 +1,10 @@
 using FluentValidation;
 using MediatR;
+using QuinntyneBrown.Core;
+using QuinntyneBrown.Core.Interfaces;
+using QuinntyneBrown.Core.Models;
 using System.Threading;
 using System.Threading.Tasks;
-using QuinntyneBrown.Api.Models;
-using QuinntyneBrown.Api.Core;
-using QuinntyneBrown.Api.Interfaces;
 
 namespace QuinntyneBrown.Api.Features
 {
@@ -39,7 +39,7 @@ namespace QuinntyneBrown.Api.Features
         
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var account = new Account(new DomainEvents.CreateAccount { 
+                var account = new Account(new Core.DomainEvents.CreateAccount { 
                 
                 });
                 

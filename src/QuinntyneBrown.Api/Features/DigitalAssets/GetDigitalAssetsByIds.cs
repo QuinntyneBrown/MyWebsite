@@ -1,4 +1,4 @@
-﻿using QuinntyneBrown.Api.Interfaces;
+﻿using QuinntyneBrown.Core.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;

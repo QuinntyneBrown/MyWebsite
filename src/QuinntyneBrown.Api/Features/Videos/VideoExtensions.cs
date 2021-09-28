@@ -1,5 +1,5 @@
 using System;
-using QuinntyneBrown.Api.Models;
+using QuinntyneBrown.Core.Models;
 
 namespace QuinntyneBrown.Api.Features
 {

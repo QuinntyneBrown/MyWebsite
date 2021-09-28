@@ -4,9 +4,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System;
-using QuinntyneBrown.Api.Models;
-using QuinntyneBrown.Api.Core;
-using QuinntyneBrown.Api.Interfaces;
+using QuinntyneBrown.Core.Models;
+using QuinntyneBrown.Core;
+using QuinntyneBrown.Core.Interfaces;
 
 namespace QuinntyneBrown.Api.Features
 {

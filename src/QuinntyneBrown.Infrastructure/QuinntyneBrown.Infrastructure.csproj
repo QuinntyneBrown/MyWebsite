@@ -4,4 +4,16 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Data\Seeding\QuinntyneBrown.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Seeding\QuinntyneBrown.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuinntyneBrown.Core\QuinntyneBrown.Core.csproj" />
+  </ItemGroup>
+
 </Project>

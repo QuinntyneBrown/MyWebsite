@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using QuinntyneBrown.Api.Extensions;
-using QuinntyneBrown.Api.Core;
-using QuinntyneBrown.Api.Interfaces;
+using QuinntyneBrown.Core;
+using QuinntyneBrown.Core.Interfaces;
 using QuinntyneBrown.Api.Extensions;
 using Microsoft.EntityFrameworkCore;
 

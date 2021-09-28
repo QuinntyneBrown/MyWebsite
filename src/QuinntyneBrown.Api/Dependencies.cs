@@ -1,7 +1,7 @@
-using QuinntyneBrown.Api.Core;
-using QuinntyneBrown.Api.Data;
+using QuinntyneBrown.Core;
+using QuinntyneBrown.Infrastructure.Data;
 using QuinntyneBrown.Api.Extensions;
-using QuinntyneBrown.Api.Interfaces;
+using QuinntyneBrown.Core.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting;
