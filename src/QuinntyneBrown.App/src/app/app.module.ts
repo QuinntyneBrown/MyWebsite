@@ -7,6 +7,7 @@ import { baseUrl, HeadersInterceptor, JwtInterceptor } from '@core';
 import { ShellModule } from '@shared/shells/shell';
 import { WorkspaceShellModule } from '@shared/shells/workspace-shell';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    { provide: baseUrl, useValue: "https://quinntynebrown.azurewebsites.net/" },
+    { provide: baseUrl, useValue: environment.baseUrl },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HeadersInterceptor,

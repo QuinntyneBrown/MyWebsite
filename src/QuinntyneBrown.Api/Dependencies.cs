@@ -63,7 +63,7 @@ namespace QuinntyneBrown.Api
 
             services.AddHttpContextAccessor();
 
-            services.AddMediatR(typeof(IQuinntyneBrownDbContext));
+            services.AddMediatR(typeof(Startup));
 
             services.AddTransient<IQuinntyneBrownDbContext, QuinntyneBrownDbContext>();
 
