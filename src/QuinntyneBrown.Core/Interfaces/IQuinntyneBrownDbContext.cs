@@ -12,6 +12,7 @@ namespace QuinntyneBrown.Core.Interfaces
         DbSet<BlogPost> BlogPosts { get; }
         DbSet<Video> Videos { get; }
         DbSet<DigitalAsset> DigitalAssets { get; }
+        DbSet<JsonContent> JsonContents { get; }
         DbSet<User> Users { get; }
         DbSet<Account> Accounts { get; }
         DbSet<StoredEvent> StoredEvents { get; }

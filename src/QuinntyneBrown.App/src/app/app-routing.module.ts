@@ -13,8 +13,10 @@ const routes: Routes = [
     { path: 'player/:videoId', loadChildren: () => import('./player/player.module').then(m => m.PlayerModule) }
   ]),
 
-  WorkspaceRoute.withShell([{ path: 'video', loadChildren: () => import('./video/video.module').then(m => m.VideoModule) }])
-
+  WorkspaceRoute.withShell([
+    { path:'workspace', redirectTo: 'workspace/video', pathMatch: 'full' },
+    { path:'workspace/video', loadChildren: () => import('./video/video.module').then(m => m.VideoModule) }
+  ])
 ];
 
 @NgModule({

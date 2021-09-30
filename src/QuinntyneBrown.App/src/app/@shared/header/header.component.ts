@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShellContextService } from '@shared/shells/shell/shell-context.service';
+import { ProfileContextService } from '@core/services/context/profile-context.service';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -9,19 +9,12 @@ import { map } from 'rxjs/operators';
 })
 export class HeaderComponent {
 
-  public vm$ = this._shellContextService.profile$
+  public vm$ = this._profileContextService.profile$
   .pipe(
     map(profile => ({ profile }))
   );
 
   constructor(
-    private readonly _shellContextService: ShellContextService
-  ) {
-
-  }
-
-  public handleSocialClick(url:string) {
-    alert(url);
-    document.location.href = url;
-  }
+    private readonly _profileContextService: ProfileContextService
+  ) { }
 }

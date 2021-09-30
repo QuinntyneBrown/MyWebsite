@@ -1,8 +1,9 @@
-import { Component, Output, EventEmitter, Renderer2 } from '@angular/core';
+import { Component, Output, EventEmitter, Renderer2, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserContextService } from '@core/services/context/user-context.service';
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { LoginContextService } from '../login-context.service';
+
 
 @Component({
   selector: 'app-login-form',
@@ -11,14 +12,16 @@ import { LoginContextService } from '../login-context.service';
 })
 export class LoginFormComponent {
 
+
   public vm$ = combineLatest([
-    this._loginContextService.username$,
-    this._loginContextService.password$
+    this._userContextService.username$,
+    this._userContextService.password$
   ]).pipe(
     map(([username,password]) => ({
       form:new FormGroup({
         username: new FormControl(username, [Validators.required]),
-        password: new FormControl(password, [Validators.required])
+        password: new FormControl(password, [Validators.required]),
+        rememberMe: new FormControl(null,[])
       })
     }))
   );
@@ -28,6 +31,6 @@ export class LoginFormComponent {
 
   constructor(
     private readonly _renderer: Renderer2,
-    private readonly _loginContextService: LoginContextService
+    private readonly _userContextService: UserContextService
     ) { }
 }

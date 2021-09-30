@@ -16,6 +16,8 @@ namespace QuinntyneBrown.Infrastructure.Data
         public DbSet<User> Users { get; private set; }
         public DbSet<Account> Accounts { get; private set; }
         public DbSet<StoredEvent> StoredEvents { get; private set; }
+        public DbSet<JsonContent> JsonContents { get; private set; }
+
         public QuinntyneBrownDbContext(DbContextOptions options)
             :base(options) {
             SavingChanges += QuinntyneBrownDbContext_SavingChanges;

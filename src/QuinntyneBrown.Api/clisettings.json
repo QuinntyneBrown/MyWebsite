@@ -1,0 +1,39 @@
+{
+  "projects": null,
+  "path": "C:\\Projects\\QuinntyneBrown",
+  "solutionName": "QuinntyneBrown.sln",
+  "rootNamespace": "QuinntyneBrown",
+  "domainNamespace": "QuinntyneBrown.Api",
+  "applicationNamespace": "QuinntyneBrown.Api",
+  "infrastructureNamespace": "QuinntyneBrown.Api",
+  "apiNamespace": "QuinntyneBrown.Api",
+  "domainDirectory": "C:\\Projects\\QuinntyneBrown\\src\\QuinntyneBrown.Api",
+  "applicationDirectory": "C:\\Projects\\QuinntyneBrown\\src\\QuinntyneBrown.Api",
+  "infrastructureDirectory": "C:\\Projects\\QuinntyneBrown\\src\\QuinntyneBrown.Api",
+  "apiDirectory": "C:\\Projects\\QuinntyneBrown\\src\\QuinntyneBrown.Api",
+  "appDirectories": [
+    "C:\\Projects\\QuinntyneBrown\\src\\QuinntyneBrown.App"
+  ],
+  "buildingBlocksCoreNamespace": "BuildingBlocks.Core",
+  "buildingBlocksEventStoreNamespace": "BuildingBlocks.EventStore",
+  "store": null,
+  "namespace": null,
+  "domain": null,
+  "core": null,
+  "api": null,
+  "entityIdDataType": null,
+  "sourceFolder": "src",
+  "testFolder": null,
+  "dbContext": "QuinntyneBrownDbContext",
+  "eventSourcing": false,
+  "resources": [
+    "Profile",
+    "Talk",
+    "BlogPost",
+    "Video",
+    "DigitalAsset",
+    "User",
+    "Account",
+    "StoredEvent"
+  ]
+}

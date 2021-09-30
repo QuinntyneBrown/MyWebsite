@@ -53,7 +53,8 @@ namespace QuinntyneBrown.Api
                     "http://www.quinntynebrown.com",
                     "https://www.quinntynebrown.com", 
                     "http://quinntynebrown.com", 
-                    "https://quinntynebrown.com")
+                    "https://quinntynebrown.com",
+                    "http://localhost:4200")
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(isOriginAllowed: _ => true)

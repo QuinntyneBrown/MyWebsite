@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginContextService } from '../login-context.service';
+import { UserContextService } from '@core/services/context/user-context.service';
+
 
 @Component({
   selector: 'app-password-form',
@@ -9,7 +10,7 @@ import { LoginContextService } from '../login-context.service';
 export class PasswordFormComponent {
 
   constructor(
-    private readonly _loginContextService: LoginContextService
+    private readonly _userContextService: UserContextService
   ) { }
 
 

@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ProfileService } from '@api';
+import { fullname } from '@core';
 import { shareReplay } from 'rxjs/operators';
 
-@Injectable()
-export class ShellContextService {
-
-  public readonly profile$ = this._profileService.getByName({ fullname: "Quinntyne Brown"})
+@Injectable({
+  providedIn: 'root'
+})
+export class ProfileContextService {
+  public readonly profile$ = this._profileService.getByName({ fullname })
   .pipe(
     shareReplay(1)
   );
