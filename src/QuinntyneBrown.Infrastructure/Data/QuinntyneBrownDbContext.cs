@@ -8,6 +8,7 @@ namespace QuinntyneBrown.Infrastructure.Data
 {
     public class QuinntyneBrownDbContext: DbContext, IQuinntyneBrownDbContext
     {
+        public DbSet<ContactRequest> ContactRequests { get; private set; }
         public DbSet<Profile> Profiles { get; private set; }
         public DbSet<Talk> Talks { get; private set; }
         public DbSet<BlogPost> BlogPosts { get; private set; }

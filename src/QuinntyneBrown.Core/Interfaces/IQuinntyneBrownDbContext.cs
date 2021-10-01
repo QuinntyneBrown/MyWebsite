@@ -7,6 +7,7 @@ namespace QuinntyneBrown.Core.Interfaces
 {
     public interface IQuinntyneBrownDbContext
     {
+        DbSet<ContactRequest> ContactRequests { get; }
         DbSet<Profile> Profiles { get; }
         DbSet<Talk> Talks { get; }
         DbSet<BlogPost> BlogPosts { get; }
