@@ -21,7 +21,7 @@ namespace QuinntyneBrown.Infrastructure.Data
 
         public QuinntyneBrownDbContext(DbContextOptions options)
             :base(options) {
-            SavingChanges += QuinntyneBrownDbContext_SavingChanges;
+            SavingChanges += DbContext_SavingChanges;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -31,7 +31,7 @@ namespace QuinntyneBrown.Infrastructure.Data
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(QuinntyneBrownDbContext).Assembly);
         }
 
-        private void QuinntyneBrownDbContext_SavingChanges(object sender, SavingChangesEventArgs e)
+        private void DbContext_SavingChanges(object sender, SavingChangesEventArgs e)
         {
             var entries = ChangeTracker.Entries<QuinntyneBrown.Core.AggregateRoot>()
                 .Where(
@@ -51,13 +51,13 @@ namespace QuinntyneBrown.Infrastructure.Data
 
         public override void Dispose()
         {
-            SavingChanges -= QuinntyneBrownDbContext_SavingChanges;
+            SavingChanges -= DbContext_SavingChanges;
             base.Dispose();
         }
 
         public override ValueTask DisposeAsync()
         {
-            SavingChanges -= QuinntyneBrownDbContext_SavingChanges;
+            SavingChanges -= DbContext_SavingChanges;
             return base.DisposeAsync();
         }
 
