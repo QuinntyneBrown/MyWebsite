@@ -17,7 +17,6 @@ namespace QuinntyneBrown.Api.Features
                 RuleFor(request => request.BlogPost).NotNull();
                 RuleFor(request => request.BlogPost).SetValidator(new BlogPostValidator());
             }
-
         }
 
         public class Request : IRequest<Response>
@@ -39,7 +38,7 @@ namespace QuinntyneBrown.Api.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var blogPost = new BlogPost(request.BlogPost.Title, request.BlogPost.Body);
+                var blogPost = new BlogPost(new (request.BlogPost.Title, request.BlogPost.Body));
 
                 _context.BlogPosts.Add(blogPost);
 
@@ -50,7 +49,6 @@ namespace QuinntyneBrown.Api.Features
                     BlogPost = blogPost.ToDto()
                 };
             }
-
         }
     }
 }

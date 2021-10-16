@@ -18,24 +18,26 @@ namespace QuinntyneBrown.Core.Models
 
         }
 
-        public Account(CreateAccount createAccount)
-        {            
+        public Account(CreateAccount @event)
+        {
+            Apply(@event);           
+        }
+
+        protected override void When(dynamic @event) => When(@event);
+
+        private void When(CreateAccount createAccount)
+        {
             AccountId = createAccount.AccountId;
             UserId = createAccount.UserId;
             AccountHolderFullname = createAccount.AccountHolderFullname;
             Firstname = createAccount.Firstname;
             Lastname = createAccount.Lastname;
-            Profiles = new();            
-        }
-
-        protected override void When(dynamic @event)
-        {
-            throw new NotImplementedException();
+            Profiles = new();
         }
 
         protected override void EnsureValidState()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

@@ -1,4 +1,4 @@
-using QuinntyneBrown.Core;
+using QuinntyneBrown.Core.DomainEvents;
 using System;
 
 namespace QuinntyneBrown.Core.Models
@@ -10,10 +10,9 @@ namespace QuinntyneBrown.Core.Models
         public string Body { get; private set; }
         public DateTime Created { get; private set; } = DateTime.UtcNow;
         public DateTime? Publised { get; private set; }
-        public BlogPost(string title, string body)
+        public BlogPost(CreateBlogPost @event)
         {
-            Title = title;
-            Body = body;
+            Apply(@event);
         }
 
         private BlogPost()
@@ -21,11 +20,14 @@ namespace QuinntyneBrown.Core.Models
 
         }
 
-        protected override void When(dynamic @event)
+        protected override void When(dynamic @event) => When(@event);
+
+        private void When(CreateBlogPost @event)
         {
-
+            BlogPostId = @event.BlogPostId;
+            Title = @event.Title;
+            Body = @event.Body;
         }
-
         protected override void EnsureValidState()
         {
 
