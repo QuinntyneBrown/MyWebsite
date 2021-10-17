@@ -1,9 +1,8 @@
-using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class Profile
+    public class Profile: AggregateRoot
     {
         public Guid ProfileId { get; private set; }
         public Guid AccountId { get; private set; }
@@ -41,6 +40,11 @@ namespace QuinntyneBrown.Core.Models
         public void SetGithubProfile(string profile)
         {
             GithubProfile = profile;
+        }
+
+        protected override void When(dynamic @event) => When(@event);
+        protected override void EnsureValidState()
+        {
         }
     }
 }

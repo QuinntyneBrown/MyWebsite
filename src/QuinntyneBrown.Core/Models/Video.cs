@@ -2,7 +2,7 @@ using System;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class Video
+    public class Video: AggregateRoot
     {
         public Guid VideoId { get; private set; }
         public string Title { get; private set; }
@@ -27,6 +27,11 @@ namespace QuinntyneBrown.Core.Models
         public void Publish(DateTime published)
         {
             Published = published;
+        }
+
+        protected override void When(dynamic @event) => When(@event);
+        protected override void EnsureValidState()
+        {
         }
     }
 }
