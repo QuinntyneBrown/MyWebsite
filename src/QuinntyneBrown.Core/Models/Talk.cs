@@ -2,7 +2,7 @@ using System;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class Talk
+    public class Talk: AggregateRoot
     {
         public Guid TalkId { get; set; }
         public string Title { get; set; }
@@ -20,6 +20,11 @@ namespace QuinntyneBrown.Core.Models
         private Talk()
         {
 
+        }
+
+        protected override void When(dynamic @event) => When(@event);
+        protected override void EnsureValidState()
+        {
         }
     }
 }

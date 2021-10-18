@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class User
+    public class User: AggregateRoot
     {
         public Guid UserId { get; private set; }
         public string Fullname { get; private set; }
@@ -32,6 +32,11 @@ namespace QuinntyneBrown.Core.Models
         {
             RefreshToken = token;
             return this;
+        }
+
+        protected override void When(dynamic @event) => When(@event);
+        protected override void EnsureValidState()
+        {
         }
     }
 }
