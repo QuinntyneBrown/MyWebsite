@@ -1,3 +1,4 @@
+using QuinntyneBrown.Core.DomainEvents;
 using QuinntyneBrown.Core.Interfaces;
 using System;
 using System.Security.Cryptography;
@@ -35,6 +36,12 @@ namespace QuinntyneBrown.Core.Models
         }
 
         protected override void When(dynamic @event) => When(@event);
+
+        private void when(AddRefreshToken @event)
+        {
+            RefreshToken = @event.RefreshToken;
+        }
+
         protected override void EnsureValidState()
         {
         }
