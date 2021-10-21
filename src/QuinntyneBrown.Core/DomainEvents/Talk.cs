@@ -4,6 +4,6 @@ namespace QuinntyneBrown.Core.DomainEvents
 {
     public class CreateTalk
     {
-        public Guid TalkId { get; set; } = Guid.NewGuid();
+        public Guid TalkId { get; private set; } = Guid.NewGuid();
     }
 }
