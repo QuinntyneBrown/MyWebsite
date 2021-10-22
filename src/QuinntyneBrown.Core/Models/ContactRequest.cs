@@ -3,7 +3,7 @@ using System;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class ContactRequest: AggregateRoot
+    public class ContactRequest : AggregateRoot
     {
         public Guid ContactRequestId { get; private set; }
         public string RequestedByEmail { get; private set; }

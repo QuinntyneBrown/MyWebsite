@@ -7,11 +7,11 @@ namespace QuinntyneBrown.Api.Features
     {
         public static StoredEventDto ToDto(this StoredEvent storedEvent)
         {
-            return new ()
+            return new()
             {
                 StoredEventId = storedEvent.StoredEventId
             };
         }
-        
+
     }
 }

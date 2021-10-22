@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuinntyneBrown.Infrastructure.Data
 {
-    public class QuinntyneBrownDbContext: DbContext, IQuinntyneBrownDbContext
+    public class QuinntyneBrownDbContext : DbContext, IQuinntyneBrownDbContext
     {
         public DbSet<ContactRequest> ContactRequests { get; private set; }
         public DbSet<Profile> Profiles { get; private set; }
@@ -20,14 +20,15 @@ namespace QuinntyneBrown.Infrastructure.Data
         public DbSet<JsonContent> JsonContents { get; private set; }
 
         public QuinntyneBrownDbContext(DbContextOptions options)
-            :base(options) {
+            : base(options)
+        {
             SavingChanges += DbContext_SavingChanges;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(QuinntyneBrownDbContext).Assembly);
         }
 

@@ -21,12 +21,15 @@ namespace QuinntyneBrown.Api.Features
         {
             private readonly IQuinntyneBrownDbContext _context;
 
-            public Handler(IQuinntyneBrownDbContext context){
+            public Handler(IQuinntyneBrownDbContext context)
+            {
                 _context = context;
             }
 
-            public async Task<Response> Handle(Request request, CancellationToken cancellationToken) {
-			    return new () { 
+            public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
+            {
+                return new()
+                {
                     JsonContents = await _context.JsonContents.Select(x => x.ToDto()).ToListAsync()
                 };
             }

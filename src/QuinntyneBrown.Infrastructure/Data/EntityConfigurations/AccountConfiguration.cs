@@ -10,7 +10,7 @@ namespace QuinntyneBrown.Infrastructure.Data.EntityConfigurations
         {
             builder
                 .ToContainer(nameof(Account))
-                .HasMany(x => x.Profiles);            
+                .HasMany(x => x.Profiles);
         }
     }
 }

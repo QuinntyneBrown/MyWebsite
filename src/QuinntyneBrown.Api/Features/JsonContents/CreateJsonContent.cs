@@ -19,11 +19,12 @@ namespace QuinntyneBrown.Api.Features
             }
         }
 
-        public class Request : IRequest<Response> { 
-            public JsonContentDto JsonContent { get; set; }        
+        public class Request : IRequest<Response>
+        {
+            public JsonContentDto JsonContent { get; set; }
         }
 
-        public class Response: ResponseBase
+        public class Response : ResponseBase
         {
             public JsonContentDto JsonContent { get; set; }
         }
@@ -32,19 +33,22 @@ namespace QuinntyneBrown.Api.Features
         {
             private readonly IQuinntyneBrownDbContext _context;
 
-            public Handler(IQuinntyneBrownDbContext context){
+            public Handler(IQuinntyneBrownDbContext context)
+            {
                 _context = context;
             }
 
-            public async Task<Response> Handle(Request request, CancellationToken cancellationToken) {
+            public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
+            {
 
                 var jsonContent = new JsonContent(new Core.DomainEvents.CreateJsonContent { });
 
                 _context.JsonContents.Add(jsonContent);
 
                 await _context.SaveChangesAsync(cancellationToken);
-			    
-                return new () { 
+
+                return new()
+                {
                     JsonContent = jsonContent.ToDto()
                 };
             }

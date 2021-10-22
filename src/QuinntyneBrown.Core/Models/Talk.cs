@@ -2,7 +2,7 @@ using System;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class Talk: AggregateRoot
+    public class Talk : AggregateRoot
     {
         public Guid TalkId { get; set; }
         public string Title { get; set; }

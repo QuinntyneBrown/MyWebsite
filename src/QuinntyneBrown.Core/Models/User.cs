@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class User: AggregateRoot
+    public class User : AggregateRoot
     {
         public Guid UserId { get; private set; }
         public string Fullname { get; private set; }

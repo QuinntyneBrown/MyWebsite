@@ -12,27 +12,28 @@ namespace QuinntyneBrown.Api.Features
 {
     public class GetStoredEvents
     {
-        public class Request: IRequest<Response> { }
+        public class Request : IRequest<Response> { }
 
-        public class Response: ResponseBase
+        public class Response : ResponseBase
         {
             public List<StoredEventDto> StoredEvents { get; set; }
         }
 
-        public class Handler: IRequestHandler<Request, Response>
+        public class Handler : IRequestHandler<Request, Response>
         {
             private readonly IQuinntyneBrownDbContext _context;
-        
+
             public Handler(IQuinntyneBrownDbContext context)
                 => _context = context;
-        
+
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                return new () {
+                return new()
+                {
                     StoredEvents = await _context.StoredEvents.Select(x => x.ToDto()).ToListAsync()
                 };
             }
-            
+
         }
     }
 }

@@ -3,7 +3,7 @@ using System;
 
 namespace QuinntyneBrown.Core.Interfaces
 {
-    public interface IDomainEvent: INotification
+    public interface IDomainEvent : INotification
     {
         DateTime Created { get; set; }
     }

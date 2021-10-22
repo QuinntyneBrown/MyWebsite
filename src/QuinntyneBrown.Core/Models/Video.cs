@@ -2,7 +2,7 @@ using System;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class Video: AggregateRoot
+    public class Video : AggregateRoot
     {
         public Guid VideoId { get; private set; }
         public string Title { get; private set; }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class Account: AggregateRoot
+    public class Account : AggregateRoot
     {
         public Guid AccountId { get; private set; }
         public Guid UserId { get; private set; }
@@ -20,7 +20,7 @@ namespace QuinntyneBrown.Core.Models
 
         public Account(CreateAccount @event)
         {
-            Apply(@event);           
+            Apply(@event);
         }
 
         protected override void When(dynamic @event) => When(@event);

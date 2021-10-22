@@ -2,7 +2,7 @@
 
 namespace QuinntyneBrown.Core.DomainEvents
 {
-    public class CreateBlogPost: BaseDomainEvent
+    public class CreateBlogPost : BaseDomainEvent
     {
         public Guid BlogPostId { get; private set; } = Guid.NewGuid();
         public string Title { get; private set; }

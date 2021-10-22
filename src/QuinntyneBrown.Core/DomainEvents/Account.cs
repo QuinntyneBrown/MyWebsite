@@ -2,7 +2,7 @@
 
 namespace QuinntyneBrown.Core.DomainEvents
 {
-    public class CreateAccount: BaseDomainEvent
+    public class CreateAccount : BaseDomainEvent
     {
         public Guid AccountId { get; private set; } = Guid.NewGuid();
         public Guid UserId { get; private set; }

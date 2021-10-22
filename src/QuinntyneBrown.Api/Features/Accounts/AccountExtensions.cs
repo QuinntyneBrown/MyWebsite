@@ -7,11 +7,11 @@ namespace QuinntyneBrown.Api.Features
     {
         public static AccountDto ToDto(this Account account)
         {
-            return new ()
+            return new()
             {
                 AccountId = account.AccountId
             };
         }
-        
+
     }
 }

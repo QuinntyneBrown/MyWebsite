@@ -51,8 +51,8 @@ namespace QuinntyneBrown.Api
                 builder => builder
                 .WithOrigins(
                     "http://www.quinntynebrown.com",
-                    "https://www.quinntynebrown.com", 
-                    "http://quinntynebrown.com", 
+                    "https://www.quinntynebrown.com",
+                    "http://quinntynebrown.com",
                     "https://quinntynebrown.com",
                     "http://localhost:4200")
                 .AllowAnyMethod()

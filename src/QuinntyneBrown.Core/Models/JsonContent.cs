@@ -4,7 +4,7 @@ using System;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class JsonContent: AggregateRoot
+    public class JsonContent : AggregateRoot
     {
         public Guid JsonContentId { get; private set; }
         public JObject Json { get; private set; }
@@ -33,7 +33,7 @@ namespace QuinntyneBrown.Core.Models
 
         protected override void EnsureValidState()
         {
-            if(string.IsNullOrEmpty(Name))
+            if (string.IsNullOrEmpty(Name))
             {
                 throw new Exception();
             }

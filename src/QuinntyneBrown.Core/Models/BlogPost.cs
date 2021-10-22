@@ -3,7 +3,7 @@ using System;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class BlogPost: AggregateRoot
+    public class BlogPost : AggregateRoot
     {
         public Guid BlogPostId { get; private set; }
         public string Title { get; private set; }

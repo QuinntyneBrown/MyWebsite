@@ -4,7 +4,7 @@ using QuinntyneBrown.Core.Models;
 
 namespace QuinntyneBrown.Api.Data
 {
-    public class ContactRequestConfiguration: IEntityTypeConfiguration<ContactRequest>
+    public class ContactRequestConfiguration : IEntityTypeConfiguration<ContactRequest>
     {
         public void Configure(EntityTypeBuilder<ContactRequest> builder)
         {
@@ -12,6 +12,6 @@ namespace QuinntyneBrown.Api.Data
             .ToContainer(nameof(ContactRequest))
             .HasNoDiscriminator();
         }
-        
+
     }
 }

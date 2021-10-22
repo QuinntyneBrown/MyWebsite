@@ -18,6 +18,6 @@ namespace QuinntyneBrown.Core.Interfaces
         DbSet<Account> Accounts { get; }
         DbSet<StoredEvent> StoredEvents { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-        
+
     }
 }

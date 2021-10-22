@@ -2,7 +2,7 @@ using System;
 
 namespace QuinntyneBrown.Core.Models
 {
-    public class Profile: AggregateRoot
+    public class Profile : AggregateRoot
     {
         public Guid ProfileId { get; private set; }
         public Guid AccountId { get; private set; }

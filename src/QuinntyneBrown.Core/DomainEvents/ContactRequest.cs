@@ -2,7 +2,7 @@
 
 namespace QuinntyneBrown.Core.DomainEvents
 {
-    public class CreateContactRequest: BaseDomainEvent
+    public class CreateContactRequest : BaseDomainEvent
     {
         public Guid ContactRequestId { get; private set; } = Guid.NewGuid();
         public string RequestedByEmail { get; private set; }

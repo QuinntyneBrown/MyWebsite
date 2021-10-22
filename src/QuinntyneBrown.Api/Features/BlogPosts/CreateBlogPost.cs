@@ -38,7 +38,7 @@ namespace QuinntyneBrown.Api.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var blogPost = new BlogPost(new (request.BlogPost.Title, request.BlogPost.Body));
+                var blogPost = new BlogPost(new(request.BlogPost.Title, request.BlogPost.Body));
 
                 _context.BlogPosts.Add(blogPost);
 
