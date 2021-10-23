@@ -1,3 +1,4 @@
+using QuinntyneBrown.Core.DomainEvents;
 using System;
 
 namespace QuinntyneBrown.Core.Models
@@ -30,6 +31,14 @@ namespace QuinntyneBrown.Core.Models
         }
 
         protected override void When(dynamic @event) => When(@event);
+
+        private void When(CreateVideo createVideo)
+        {
+            VideoId = createVideo.VideoId;
+            Title = createVideo.Title;
+            Description = createVideo.Description;
+        }
+
         protected override void EnsureValidState()
         {
         }
