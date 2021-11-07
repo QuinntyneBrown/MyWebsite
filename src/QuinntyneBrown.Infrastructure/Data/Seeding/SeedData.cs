@@ -93,14 +93,7 @@ namespace QuinntyneBrown.Infrastructure.Data
 
                 if (entity == null)
                 {
-                    entity = new(new CreateAccount
-                    {
-                        UserId = user.UserId,
-                        AccountId = Guid.NewGuid(),
-                        AccountHolderFullname = "Quinntyne Brown",
-                        Firstname = "Quinntyne",
-                        Lastname = "Brown"
-                    });
+                    entity = new(new CreateAccount(user.UserId, "Quinntyne Brown", "Quinntyne", "Quinntyne"));
 
                     context.Accounts.Add(entity);
 

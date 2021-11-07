@@ -17,7 +17,6 @@ namespace QuinntyneBrown.Api.Features
                 RuleFor(request => request.Account).NotNull();
                 RuleFor(request => request.Account).SetValidator(new AccountValidator());
             }
-
         }
 
         public class Request : IRequest<Response>
@@ -39,16 +38,17 @@ namespace QuinntyneBrown.Api.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var account = new Account(new Core.DomainEvents.CreateAccount
-                {
-
-                });
+                var account = new Account(new Core.DomainEvents.CreateAccount(
+                    request.Account.UserId,
+                    request.Account.AccountHolderFullname,
+                    request.Account.Firstname,
+                    request.Account.Lastname));
 
                 _context.Accounts.Add(account);
 
                 await _context.SaveChangesAsync(cancellationToken);
 
-                return new Response()
+                return new()
                 {
                     Account = account.ToDto()
                 };

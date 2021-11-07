@@ -1,0 +1,17 @@
+@use '/src/scss/breakpoints';
+
+.g-grid {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap:40px;
+  place-items: center;
+}
+
+@media screen and (min-width: breakpoints.$screen-lg) {
+  .g-grid {
+    > div {
+      max-width: 33%;
+    }
+  }
+}

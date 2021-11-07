@@ -40,12 +40,7 @@
   .landing__videos-container {
     display: block;
     width: 100%;
-  }
 
-  .landing__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap:40px;
   }
 
   .video__title {
@@ -53,12 +48,12 @@
   }
 }
 
-@media screen and (min-width: breakpoints.$screen-lg) {
+@media screen and (min-width: breakpoints.$screen-md) {
   :host {
-    .landing__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:40px;
+    .landing__videos-container {
+      h2 {
+        text-align: center;
+      }
     }
   }
 }
