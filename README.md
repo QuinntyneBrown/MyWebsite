@@ -1,2 +1,1 @@
-# Quinntyne Brown
-## Professional Website
+# MyWebsite
