@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AuthService, LocalStorageService, loginCredentialsKey, NavigationService } from '@core';
-import { UserContextService } from '@core/services/context/user-context.service';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { AuthService, LocalStorageService, loginCredentialsKey, NavigationManager as NavigationManager } from '@core';
+import { UserStore } from '@core/services/context/user-store.service';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 
@@ -12,13 +12,10 @@ import { takeUntil, tap } from 'rxjs/operators';
 })
 export class LoginComponent implements OnDestroy, OnInit {
   private readonly _destroyed$ = new Subject();
-
-  constructor(
-    private readonly _authService: AuthService,
-    private readonly _navigationService: NavigationService,
-    private readonly _localStorageService: LocalStorageService,
-    private readonly _userContextService: UserContextService
-  ) { }
+  private readonly _authService = inject(AuthService);
+  private readonly _navigationManager = inject(NavigationManager);
+  private readonly _localStorageService = inject(LocalStorageService);
+  private readonly _userStore = inject(UserStore);
 
   ngOnInit() {
     this._authService.logout();
@@ -26,9 +23,9 @@ export class LoginComponent implements OnDestroy, OnInit {
     const loginCredentials = this._localStorageService.get({ name: loginCredentialsKey });
 
     if (loginCredentials && loginCredentials.rememberMe) {
-      this._userContextService.username = loginCredentials.username;
-      this._userContextService.password = loginCredentials.password;
-      this._userContextService.rememberMe = loginCredentials.rememberMe;
+      this._userStore.username = loginCredentials.username;
+      this._userStore.password = loginCredentials.password;
+      this._userStore.rememberMe = loginCredentials.rememberMe;
     }
   }
 
@@ -40,7 +37,7 @@ export class LoginComponent implements OnDestroy, OnInit {
     })
     .pipe(
       takeUntil(this._destroyed$),
-      tap(_ => this._navigationService.redirectPreLogin())
+      tap(_ => this._navigationManager.redirectPreLogin())
     )
     .subscribe();
   }

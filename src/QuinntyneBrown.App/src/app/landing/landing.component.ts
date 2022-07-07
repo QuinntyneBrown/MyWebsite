@@ -1,8 +1,8 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Video, VideoService } from '@api';
 import { baseUrl } from '@core';
-import { ProfileContextService } from '@core/services/context/profile-context.service';
+import { ProfileStore } from '@core/services/context/profile-store.service';
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -13,8 +13,12 @@ import { map } from 'rxjs/operators';
 })
 export class LandingComponent {
 
-  public readonly vm$ = combineLatest([
-    this._profileContextService.profile$,
+  private readonly _profileStore = inject(ProfileStore);
+  private readonly _videoService = inject(VideoService);
+  private readonly _router = inject(Router);
+
+  readonly vm$ = combineLatest([
+    this._profileStore.profile$,
     this._videoService.get()
   ])
   .pipe(
@@ -23,12 +27,9 @@ export class LandingComponent {
 
   constructor(
     @Inject(baseUrl) public baseUrl:string,
-    private readonly _profileContextService: ProfileContextService,
-    private readonly _videoService: VideoService,
-    private readonly _router: Router
   ) { }
 
-  public handleVideoTitleClick(video: Video) {
+  handleVideoTitleClick(video: Video) {
     this._router.navigate(["player",video.videoId]);
   }
 }

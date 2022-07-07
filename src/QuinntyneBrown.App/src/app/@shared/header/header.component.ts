@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ProfileContextService } from '@core/services/context/profile-context.service';
+import { Component, inject } from '@angular/core';
+import { ProfileStore } from '@core/services/context/profile-store.service';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -9,12 +9,10 @@ import { map } from 'rxjs/operators';
 })
 export class HeaderComponent {
 
-  public vm$ = this._profileContextService.profile$
+  private readonly _profileStore = inject(ProfileStore);
+
+  public vm$ = this._profileStore.profile$
   .pipe(
     map(profile => ({ profile }))
   );
-
-  constructor(
-    private readonly _profileContextService: ProfileContextService
-  ) { }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Route } from '@shared/shells/shell/route';
-import { Route as WorkspaceRoute } from '@shared/shells/workspace-shell/route';
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'landing' },
@@ -9,13 +9,7 @@ const routes: Routes = [
 
   Route.withShell([
     { path: 'landing', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule) },
-    { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
     { path: 'player/:videoId', loadChildren: () => import('./player/player.module').then(m => m.PlayerModule) }
-  ]),
-
-  WorkspaceRoute.withShell([
-    { path:'workspace', redirectTo: 'workspace/video', pathMatch: 'full' },
-    { path:'workspace/video', loadChildren: () => import('./video/video.module').then(m => m.VideoModule) }
   ])
 ];
 

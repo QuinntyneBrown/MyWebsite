@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { baseUrl, HeadersInterceptor, JwtInterceptor } from '@core';
 import { ShellModule } from '@shared/shells/shell';
-import { WorkspaceShellModule } from '@shared/shells/workspace-shell';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -18,7 +17,6 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     BrowserAnimationsModule,
     ShellModule,
-    WorkspaceShellModule,
     HttpClientModule
   ],
   providers: [

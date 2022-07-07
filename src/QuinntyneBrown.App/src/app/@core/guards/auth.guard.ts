@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { NavigationService } from '../services/functional/navigation.service';
+import { NavigationManager } from '../services/functional/navigation-manager.service';
 import { LocalStorageService } from '@core';
 import { accessTokenKey } from '../constants';
 
@@ -9,10 +9,8 @@ import { accessTokenKey } from '../constants';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(
-    private readonly _localStorageService: LocalStorageService,
-    private readonly _navigationService: NavigationService
-  ) {}
+  private readonly _localStorageService = inject(LocalStorageService);
+  private readonly _navigationManager = inject(NavigationManager);
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -22,8 +20,8 @@ export class AuthGuard implements CanActivate {
         return true;
       }
 
-      this._navigationService.lastPath = state.url;
-      this._navigationService.redirectToLogin();
+      this._navigationManager.lastPath = state.url;
+      this._navigationManager.redirectToLogin();
 
       return false;
   }

@@ -9,7 +9,7 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LocalStorageService, NavigationService } from '@core';
+import { LocalStorageService, NavigationManager } from '@core';
 import { tap } from 'rxjs/operators';
 import { accessTokenKey } from '../constants';
 
@@ -18,7 +18,7 @@ export class JwtInterceptor implements HttpInterceptor {
 
   constructor(
     private localStorageService: LocalStorageService,
-    private redirectService: NavigationService
+    private redirectService: NavigationManager
   ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {

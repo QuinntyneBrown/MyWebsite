@@ -8,17 +8,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { UsernameFormComponent } from './username-form/username-form.component';
-import { PasswordFormComponent } from './password-form/password-form.component';
-import { RememberMeComponent } from './remember-me/remember-me.component';
+
 
 @NgModule({
   declarations: [
     LoginComponent,
-    LoginFormComponent,
-    UsernameFormComponent,
-    PasswordFormComponent,
-    RememberMeComponent
+    LoginFormComponent
   ],
   imports: [
     CommonModule,

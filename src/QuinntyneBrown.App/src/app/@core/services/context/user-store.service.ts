@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UserContextService {
+export class UserStore {
   private readonly _username$: BehaviorSubject<string> = new BehaviorSubject("");
   private readonly _password$: BehaviorSubject<string> = new BehaviorSubject("");
   private readonly _rememberMe$: BehaviorSubject<boolean> = new BehaviorSubject(false);

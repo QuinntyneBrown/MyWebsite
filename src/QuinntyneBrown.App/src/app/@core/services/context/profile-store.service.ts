@@ -6,7 +6,7 @@ import { shareReplay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileContextService {
+export class ProfileStore {
   public readonly profile$ = this._profileService.getByName({ fullname })
   .pipe(
     shareReplay(1)

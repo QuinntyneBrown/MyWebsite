@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ShellComponent } from './shell.component';
 import { RouterModule } from '@angular/router';
 import { HeaderModule } from '@shared/header';
-import { FooterModule } from '@shared/footer';
 
 
 
@@ -17,8 +16,7 @@ import { FooterModule } from '@shared/footer';
   imports: [
     CommonModule,
     RouterModule,
-    HeaderModule,
-    FooterModule
+    HeaderModule
   ]
 })
 export class ShellModule { }

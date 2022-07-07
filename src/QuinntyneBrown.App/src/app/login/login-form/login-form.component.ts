@@ -1,6 +1,6 @@
-import { Component, Output, EventEmitter, Renderer2, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Renderer2, Input, inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { UserContextService } from '@core/services/context/user-context.service';
+import { UserStore } from '@core/services/context/user-store.service';
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -12,10 +12,11 @@ import { map } from 'rxjs/operators';
 })
 export class LoginFormComponent {
 
+  private readonly _userStore = inject(UserStore);
 
   public vm$ = combineLatest([
-    this._userContextService.username$,
-    this._userContextService.password$
+    this._userStore.username$,
+    this._userStore.password$
   ]).pipe(
     map(([username,password]) => ({
       form:new FormGroup({
@@ -29,8 +30,5 @@ export class LoginFormComponent {
 
   @Output() public tryToLogin: EventEmitter<{ username: string, password: string }> = new EventEmitter();
 
-  constructor(
-    private readonly _renderer: Renderer2,
-    private readonly _userContextService: UserContextService
-    ) { }
+
 }
